@@ -1,0 +1,128 @@
+\documentclass[11pt, b5paper, oneside]{book}
+\usepackage{CTEX}
+\usepackage{amsmath, amsthm, amssymb, bm, graphicx, hyperref, mathrsfs}
+\usepackage{geometry}
+\geometry{b5paper,scale=0.8}
+\usepackage{graphicx} %插入图片的宏包
+\usepackage{float} %设置图片浮动位置的宏包
+\usepackage{subfigure} %插入多图时用子图显示的宏包
+\usepackage{amstext} %公式中包含文字的宏包
+
+% 封面部分
+\title{{\Huge{\textbf{Linear Algebra }}}\\——Simple Note}
+\author{Wu Yutian}
+\date{2021.10.9}
+\linespread{1.5}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{example}[theorem]{例}
+\newtheorem{proposition}[theorem]{命题}
+\begin{document}
+
+% 输出封面
+\maketitle
+
+% 前言部分
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\begin{center}
+    \Huge\textbf{前言}
+\end{center}~\
+
+在继微积分的简明笔记之后，同时也开始了线性代数的重新学习，并为后面的矩阵论的学习打好基础。
+
+在线性代数的学习过程中主要参考了《Linear Algebra Done Right》这本书，另外同时也参考了它的中文版《线性代数应该这么学》，这本书不同于国内的教材，从向量空间的角度阐述了整个线性代数的知识体系，被国外很多学校作为教材，是一本很经典的书。另外还有一本和它名字很像的书，叫做《Linear Algebra Done Wrong》同样也是被广泛推荐的一本书，后续应该也会看一下，再对这份笔记进行补充。但是由于我手上有《Linear Algebra Done Right》的中文版，因此就从这本书开始看起，笔记的体系结构也是以此书为依据的。
+
+~\\
+% flushright可以右对齐
+\begin{flushright}
+    \begin{tabular}{c}
+        Wu Yutian\\
+        2021.10.9
+    \end{tabular}
+\end{flushright}
+
+% 目录部分
+\newpage
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+% 正文开始
+% -------------------------chapter 1-------------------------
+\chapter{Vector Space}
+
+\section{$R^n \text{与} C^n$}
+
+组（List）的概念：长度为n的组是n个有顺序的元素，用逗号隔开并且两端用括号包起来。
+
+组与集合的不同：组中的元素是有顺序的并且允许重复，而集合中没有顺序，并且元素不能重复。
+
+定义0：0表示长度为n且所有坐标都是0的组，即：\[0=(0,0,...,0)\]
+
+\section{向量空间}
+
+向量空间V在加法和标量乘法下封闭。
+
+\begin{definition}
+    向量空间就是带有加法和标量乘法的集合V，满足如下性质：
+
+    \emph{交换性（commutativity）}
+    \begin{center}
+        对所有$u,v \in V$，都有$u+v=v+u$;
+    \end{center}
+    
+    \emph{结合性(associativity)}
+    \begin{center}
+        对所有$u,v,w \in V$都有$(u+v)+w=u+(v+w)$;
+
+        对所有$v \in V$和$a,b \in F$都有$(ab)v=a(bv)$;
+    \end{center}
+
+    \emph{加法单位元(additive identity)}
+    \begin{center}
+        存在元素$0 \in V$使得对所有的$v \in V$都有$v+0=v$;
+    \end{center}
+
+    \emph{加法逆元(additive inverse)}
+    \begin{center}
+        对每个$v \in V$都存在$w \in V$使得$v+w=0$;
+    \end{center}
+
+    \emph{乘法单位元(numltiplicative indentity)}
+    \begin{center}
+        对所有$v \in V$都有$1v=v$;
+    \end{center}
+
+    \emph{分配性质(distributive properties)}
+    \begin{center}
+        对所有$a \in F$和$u,v \in V$都有$a(u+v)=au+av$;
+        
+        对所有$a,b \in F$和$v \in V$都有$(a+b)v=av+bv$;
+    \end{center}
+    
+\end{definition}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,456 @@
+\documentclass[11pt, b5paper, oneside]{book}
+\usepackage{CTEX}
+\usepackage{amsmath, amsthm, amssymb, bm, graphicx, hyperref, mathrsfs}
+\usepackage{geometry}
+\geometry{b5paper,scale=0.8}
+\usepackage{graphicx} %插入图片的宏包
+\usepackage{float} %设置图片浮动位置的宏包
+\usepackage{subfigure} %插入多图时用子图显示的宏包
+\usepackage{amstext} %公式中包含文字的宏包
+
+% 封面部分
+\title{{\Huge{\textbf{Calculus}}}\\——Simple Note}
+\author{Wu Yutian}
+\date{2021.10.5}
+\linespread{1.5}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{example}[theorem]{例}
+\newtheorem{proposition}[theorem]{命题}
+\begin{document}
+
+% 输出封面
+\maketitle
+
+% 前言部分
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\begin{center}
+    \Huge\textbf{前言}
+\end{center}~\
+
+感觉每次读书总是读完就忘了，
+尤其是一些基础的数学知识每次需要用的时候才发现基础不牢。
+因此在从博士一年级开始重新补一下数学基础，
+为以后的科研工作打好基础，
+顺便熟悉一下LATEX的实用技巧。
+计划按照自己的实用标准为每一门数学课程使用LATEX写一本小册子，
+一方面为了自己能时常温习数学知识，
+另一方面，可能也能帮助到一些需要的同学。
+虽然这会花费很多时间，但是我觉得收获应该也是非常大的。
+加油！
+
+关于本书，是在阅读《The Calculus Lifesaver》时的读书笔记，
+本书的中文版为《普林斯顿微积分读本》。
+另外，考虑到本书仅涉及一元函数的微积分部分，
+后续可能会添加一些其他书的内容作为补充。
+
+由于书中有些章节内容是没有必要记录的，
+因此本笔记的章节划分有时并不与书中对应，
+可能会省略或者综合部分内容。
+
+~\\
+% flushright可以右对齐
+\begin{flushright}
+    \begin{tabular}{c}
+        Wu Yutian\\
+        2021.10.5
+    \end{tabular}
+\end{flushright}
+
+% 目录部分
+\newpage
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+% 正文开始
+% ----------------------------chapter 1----------------------------
+\chapter{Functions,Graphs and Lines}
+
+这一章中主要介绍了一些关于函数的基本概念，很多没有必要赘述。
+
+\section{垂线检验}
+
+满足垂线检验是称为函数的必要条件。
+其实也就是我们中文教材中常说的函数图像中不能有两个点对应用一个横坐标。
+
+\section{水平线检验}
+
+满足水平线检验并不是称为函数的必要条件，而是伴随反函数的概念而提出的。
+反函数可以认为是原函数的$x,y$对调，或者说原函数图像关于$y=x$对称得到的。
+因此，容易得到，一个函数的反函数存在的必要条件就是该函数满足水平线检验。
+
+\section{函数的复合}
+
+复合函数$f(x)=h(g(x))$也可以表示为：$f=h\circ g$。
+
+\section{奇偶函数}
+
+奇函数关于原点对称;
+偶函数关于$y$轴对称。
+
+如果一个奇函数的定义域包含0，则一定存在：$f(0)=0$。
+
+通常情况下，一个函数可能是奇函数，或者偶函数，或者既不是奇函数也不是偶函数。
+特殊地，只有一个函数既是奇函数，又是偶函数：$f(x)=0$。
+
+\section{常见函数}
+
+\subsection{多项式——Poiynomials}
+\[
+    p(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_2x^2+a_1x^1+a_0
+\]
+
+\subsection{有理函数——Poiynomials}
+\[
+    f(x)=\frac{p(x)}{q(x)}
+\]
+\centerline{when p and q are polynomials}
+
+\subsection{指数和对数函数——Exponentials and logarithms}
+
+\subsection{三角函数——Trig funstions}
+
+\subsection{带绝对值函数——Functions involving absolute values}
+
+% ----------------------------chapter 2----------------------------
+\chapter{Review of Trigonometry}
+
+\section{基础部分}
+
+几个不常用的三角函数：
+
+余割：
+\[csc(x)=\frac{1}{sin(x)}\]
+
+正割：
+\[sec(x)=\frac{1}{cos(x)}\]
+
+余切：
+\[cot(x)=\frac{1}{tan(x)}\]
+
+\section{三角函数的图像}
+
+$sin(x),tan(x),cot(x),csc(x)$是$x$的奇函数；
+
+$cos(x),sec(x)$是$x$的偶函数。
+
+主要三角函数的图像：
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figure/sin.png}
+    \caption{sin figure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figure/cos.png}
+    \caption{cos figure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figure/tan.png}
+    \caption{tan figure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figure/csc.png}
+    \caption{csc figure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figure/sec.png}
+    \caption{sec figure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figure/cot.png}
+    \caption{cot figure}
+\end{figure}
+
+\section{三角恒等式}
+
+毕达哥拉斯定理及其推论：
+\begin{equation}
+    sin^2(x)+cos^2(x)=1
+\end{equation}
+\begin{equation}
+    1+tan^2(x)=sec^2(x)
+\end{equation}
+\begin{equation}
+    cot^2(x)+1=csc^2(x)
+\end{equation}
+
+余角公式：
+\begin{equation}
+    sin(x)=cos(\frac{\pi}{2}-x)
+\end{equation}
+\begin{equation}
+    tan(x)=cot(\frac{\pi}{2}-x)
+\end{equation}
+\begin{equation}
+    sec(x)=csc(\frac{\pi}{2}-x)
+\end{equation}
+\begin{equation}
+    cos(x)=sin(\frac{\pi}{2}-x)
+\end{equation}
+\begin{equation}
+    cot(x)=tan(\frac{\pi}{2}-x)
+\end{equation}
+\begin{equation}
+    csc(x)=sec(\frac{\pi}{2}-x)
+\end{equation}
+
+和差化积公式：
+\begin{equation}
+    sin(A+B)=sin(A)cos(B)+cos(A)sin(B)
+\end{equation}
+\begin{equation}
+    sin(A-B)=sin(A)cos(B)-cos(A)sin(B)
+\end{equation}
+\begin{equation}
+    cos(A+B)=cos(A)cos(B)-sin(A)sin(B)
+\end{equation}
+\begin{equation}
+    cos(A-B)=cos(A)cos(B)+sin(A)sin(B)
+\end{equation}
+
+倍角公式：
+\begin{equation}
+    sin(2x)=2sin(x)cos(x)
+\end{equation}
+\begin{equation}
+    cos(2x)=2cos^2(x)-1=1-sin^2(x)
+\end{equation}
+
+% ----------------------------chapter 3----------------------------
+\chapter{Introduction to Limits}
+
+这一章介绍了一些极限相关的基础知识
+
+\section{双边极限}
+
+通常的双侧极限在$x=a$处存在,仅当左极限和右极限在$x=a$处都存在且相等。
+
+\section{极限不存在}
+
+极限不存在的几种情况：
+\begin{itemize}
+\centering
+    \item 极限无穷大；
+    \item 左右极限不相等；
+    \item 极限来回振荡；
+\end{itemize}
+
+一个极限因振荡而不存在的例子：
+\[\lim\limits_{x+\to0} sin(\frac{1}{x})\]
+
+$sin(\frac{1}{x})$在$x=\frac{1}{\pi},\frac{1}{2\pi},\frac{1}{3\pi},...$上的值都是0。
+
+因此，$sin(\frac{1}{x})$在接近0的位置图像如下图所示：
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figure/sin1x.png}
+    \caption{$sin(\frac{1}{x})$ figure}
+\end{figure}
+
+以上图像在$x=0$附近很杂乱，它无限地在$1$和$-1$之间振荡。
+当你从右侧向$x=0$处移动时, 振荡会越来越快。
+这里没有垂直渐近线，也没有极限。
+
+\section{The Sandwich Pinciple}
+
+\begin{theorem}
+    三明治定理/夹逼定理：如果对于所有在$a$附近的$x$都有
+    $g(x)\leq f(x)\leq h(x)$
+    且$\lim\limits_{x\to a}g(x) = \lim\limits_{x\to a}h(x) = L$，
+    则$\lim\limits_{x\to a}h(x) = L$。
+\end{theorem}
+
+% ----------------------------chapter 4----------------------------
+\chapter{How to Solve Limit Problems Involving Polynomials}
+
+\section{$x\rightarrow a$时的有理函数的极限}
+
+考虑极限：
+\[\lim\limits_{x\to a}\frac{p(x)}{q(x)}\]
+
+首先总是应该尝试用$a$的值替换$x$，如果分母不为0，极限值就是替换后所得到的值。
+
+如果使用代入法并得到零比零的形式，这种算式称为\emph{不定式}。
+极限或许是有限的，极限或许是$1$或$-1$，或者极限或许不存在。
+那么我们可以借助因式分解求解极限。
+
+在进行因式分解时，立方差公式是一个常用公式：
+\[a^3-b^3 = (a-b)(a^2+ab+b^2)\]
+
+要是分母为0，但分子不为0又会怎么样？在那种情况下，将总会牵扯到一条
+垂直渐近线，即有理函数的图像在你感兴趣的$x$值上会有一条垂直渐近线。
+这时共有以下四种情况：
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figure/fourcondition.png}
+    \caption{four conditions figure}
+\end{figure}
+
+只需要查看一下$f(x)$在$x=a$两边的符号就可以判断是这四种情况中的哪一种。
+如果在$x=a$两边异号则直接判断极限不存在；如果两边极限同号则极限为$+\infty$或$-\infty$
+
+\section{$x\rightarrow a$时的平方根的极限}
+
+考虑极限：
+\[\lim\limits_{x\to 5}\frac{\sqrt{x^2-9}-4}{x-5}\]
+
+把分子分母同时乘以分子的共轭表达式，后面可以很简单地计算。
+
+\section{$x\rightarrow \infty$时的有理函数的极限}
+
+\[\lim\limits_{x\to \infty}\frac{p(x)}{q(x)}\]
+
+其中$p$和$q$是多项式，有一个重要的多项式性质：
+当$x$很大时，首项决定一切。
+
+因此可以有如下结论：
+
+(1) 如果$p$的次数等于$q$的次数，则极限是有限的且非零;
+
+(2) 如果$p$的次数大于$q$的次数，则极限是$1$或$-1$;
+
+(3) 如果$p$的次数小于$q$的次数，则极限是$0$;
+
+另外，我们在心算的时候，可以直接用多项式的首项代替该多项式进行计算。
+
+但是在具体计算过程中，我们需要对一个多项式进行这样的变型，来具体计算：
+\[\frac{p(x)}{p(x)\text{的首项}} \times p(x)\text{的首项}\]
+
+例子：
+\[\lim\limits_{x\to \infty}\frac{x-8x^4}{7x^4+2x^2-1}\]
+
+分子转换：
+\[\frac{x-8x^4}{-8x^4}\times(-8x^4)\]
+
+分母转换：
+\[\frac{7x^4+2x^2-1}{7x^4}\times(7x^4)\]
+
+因此原极限可以写作：
+\[\lim\limits_{x\to \infty} \frac{\frac{x-8x^4}{-8x^4}\times(-8x^4)}{\frac{7x^4+2x^2-1}{7x^4}\times(7x^4)}\]
+
+分子和分母的分式都趋近于1，因此原极限写作：
+\[\lim\limits_{x\to \infty} \frac{-8x^4}{7x^4} = -\frac{8}{7}\]
+
+当$x\rightarrow -\infty$时上述结论同样适用，但是需要需要注意以下两点：
+
+(1) 最后一步形如这样时：$\lim\limits_{x\to-\infty}\frac{-x}{18}$，
+需要注意极限结果的符号，最好不要直接进行心算了，符号容易出错。
+
+(2) 在计算过程中，如果存在开方操作，要注意开方后可能需要添加负号。
+
+\section{$x\rightarrow \infty$时多项式型函数的极限}
+
+对于函数$f$和$g$：
+\[f(x)=x^3+4x^2-5x^{2/3}+1\]
+\[g(x)=\sqrt{x^9-7x^2+2}\]
+
+
+这些都不是多项式, 因为它们含有分数次数或$n$次根, 但它们看起来有点像多项式。
+事实上, 上一节的方法也适用于这类对象。
+
+但是如果遇到用首项代替多项式之后，导致分子或者分母直接全部抵消的情况则需要特殊考虑，
+如下式：
+\[\lim\limits_{x\to \infty}\frac{\sqrt{4x^6-5x^5}-2x^3}{\sqrt[3]{27x^6+8x}}\]
+
+当$x$很大时, 它表现得就像是首项$4x^6$。
+因此, 我们应该会想$\sqrt{4x^6-5x^5}$也会表现得就像是$\sqrt{4x^6}$，也就是$2x^3$。
+但问题是, 消去分子中的$2x^3$, 似乎就没剩下什么了。
+
+因此我们使用前文提到过的分子分母同时乘以分子的共轭表达式的方法求解，具体过程略。
+
+% ----------------------------chapter 5----------------------------
+\chapter{Continuity and Differentiability}
+
+\section{连续性}
+
+(1) 在一点连续：如果$\lim\limits_{x\to a}f(x) = f(a)$,则函数$f$在$x=a$处连续。
+
+(2) 在一个区间连续：函数$f$在$(a,b)$中的每一点都连续，且在$x=a$处右连续，在$x=b$处左连续，则函数$f$在区间$[a,b]$上连续。
+
+一个连续函数的常数倍是连续的; 
+此外, 如果对两个连续函数做加法、减法、乘法或复合, 
+会得到另一个连续函数。
+当用一个连续函数除以另一个连续函数的时候, 
+这几乎也一样成立：除了分母为零的点外, 商函数处处连续。
+
+\begin{theorem}
+    \emph{介值定理：}如果$f$在$[a,b]$上连续, 并且$f(a) < 0$ 且 $f(b) > 0$, 那么在区间
+    $(a,b)$ 上至少有一点$c$, 使得$f(c) = 0$。代之以$f(a) > 0$ 且$f(b) < 0$, 同样成
+    立。
+\end{theorem}
+
+\begin{theorem}
+    \emph{最大值与最小值定理：}如果$f$ 在$[a, b]$(闭区间)上连续, 
+    那么$f$在$[a, b]$ 上至少有一个最大值和一个最小值.
+\end{theorem}
+
+\section{可导性}
+
+通过$(x, f(x))$ 的切线的斜率是$x$的一个函数,这个函数被称为$f$的导数,并写作$f^{'}$。
+如果极限存在的话，有：
+\[f^{'}(x)=\lim\limits_{h\to 0}\frac{f(x+h)-f(x)}{h}\]
+在这种情况下, $f$ 在$x$ 点可导. 如果对于某个特定的$x$, 极限不存在, 那么$x$ 的值
+就没有在导函数$f^{'}$的定义域里, 即$f$ 在$x$ 点不可导.
+
+\section{可导性与连续性}
+
+如果一个函数$f$在$x$ 上可导, 那么它在$x$ 上连续.
+
+% ----------------------------chapter 6----------------------------
+\chapter{How to Solve Differentiation Problems}
+
+\section{求导方法}
+
+\subsection{使用定义求导}
+
+\subsection{乘积法则}
+两个变量的乘积法则：
+\begin{center}
+    如果$y=uv$，则有$\frac{dy}{dx}=v\frac{du}{dx}+u\frac{dv}{dx}$
+\end{center}
+
+三个变量的乘积法则：
+\begin{center}
+    如果$y=uvw$，则有$\frac{dy}{dx}=\frac{du}{dx}vw+\frac{dv}{dx}uw+\frac{dw}{dx}uv$
+\end{center}
+
+\subsection{商法则}
+\begin{center}
+    如果$y=\frac{u}{v}$，则有$\frac{dy}{dx}=\frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2}$
+\end{center}
+
+\subsection{链式法则}
+\begin{center}
+    如果$y$ 是$u$ 的函数, 并且$u$ 是$x$ 的函数, 那么有：
+    $\frac{dy}{dx}=\frac{dy}{du}\frac{dy}{dx}$
+\end{center}
+
+\section{伪装成极限的导数}
+
+考虑极限：
+\[\lim\limits_{h\to 0}\frac{\sqrt[5]{32+h}-2}{h}\]
+
+看起来很难求解，但是考虑另一个形式类似的极限：
+\[\lim\limits_{h\to 0}\frac{\sqrt[5]{x+h}-\sqrt[5]{x}}{h}\]
+
+这个式子很像一个导数定义，我们设$f(x)=\sqrt[5]{x}$，
+则可以看出，原极限就是$f(x)$在$x=2$处的导数。
+而我们已知$f^{'}(x)=\frac{1}{5}x^{-\frac{4}{5}}$
+
+
+\end{document}
