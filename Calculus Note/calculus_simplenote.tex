@@ -449,8 +449,195 @@ $sin(\frac{1}{x})$在$x=\frac{1}{\pi},\frac{1}{2\pi},\frac{1}{3\pi},...$上的�
 \[\lim\limits_{h\to 0}\frac{\sqrt[5]{x+h}-\sqrt[5]{x}}{h}\]
 
 这个式子很像一个导数定义，我们设$f(x)=\sqrt[5]{x}$，
-则可以看出，原极限就是$f(x)$在$x=2$处的导数。
-而我们已知$f^{'}(x)=\frac{1}{5}x^{-\frac{4}{5}}$
+则可以看出，原极限就是$f(x)$在$x=32$处的导数。
+而我们已知$f^{'}(x)=\frac{1}{5}x^{-\frac{4}{5}}$，因此有：
+\[\lim\limits_{h\to 0}\frac{\sqrt[5]{32+h}-2}{h}=f^{'}(32)=\frac{1}{80}\]
+
+如果求解一个极限有困难, 那它或许是一个伪装的导数。迹象就是, 虚拟变量本身在分母上, 并且分子是两个量的差。
+
+\section{分段函数的导数}
+
+检验一个分段函数在分段连接点上是否可导, 需要检验分段在连接点上
+相等(以证明连续性)以及分段的导数在连接点上相等。否则, 在连接点上不可导
+
+% ----------------------------chapter 7----------------------------
+\chapter{Trig Limits and Derivatives}
+
+\section{一些极限公式}
+
+小数情况：
+\begin{equation}\label{important limit}
+    \lim\limits_{x\to 0}\frac{sin(x)}{x} = 1
+\end{equation}
+\begin{equation}
+    \lim\limits_{x\to 0}\frac{ocs(x)}{x}DNE
+\end{equation}
+\begin{equation}
+    \lim\limits_{x\to 0}\frac{tan(x)}{x} = 1
+\end{equation}
+\begin{equation}\label{eq1}
+    \lim\limits_{x\to 0}\frac{1-cos(x)}{x} = 0
+\end{equation}
+
+注意：公式\eqref{eq1}证明时分子分母上下乘以$1+cos(x)$即可。
+
+大数情况：
+\begin{equation}
+    \lim\limits_{x\to \infty}\frac{sin(x)}{x} = 0
+\end{equation}
+
+其他情况：
+面对$x\to a$的极限, 而$a\neq 0$时, 一般用$t = x-a$作替换, 将问题转化为$t\to 0$。
+
+\section{一些导数公式}
+\begin{equation}
+    \frac{d}{dx}sin(x) = cos(x)
+\end{equation}
+\begin{equation}
+    \frac{d}{dx}cos(x) = -sin(x)
+\end{equation}
+\begin{equation}
+    \frac{d}{dx}tan(x) = sec^2(x) = \frac{1}{cos^2(x)}
+\end{equation}
+\begin{equation}
+    \frac{d}{dx}sec(x) = sec(x)tan(x)
+\end{equation}
+\begin{equation}
+    \frac{d}{dx}csc(x) = -csc(x)cot(x)
+\end{equation}
+\begin{equation}
+    \frac{d}{dx}cot(x) = -csc^2(x) = -\frac{1}{sin^2(x)}
+\end{equation}
+
+\section{一个特殊函数}
+考虑函数：
+\[f(x) = x^2sin(\frac{1}{x})\]
+
+该函数在$x=0$没有定义，我们为其补充$f(0)=0$，则可以证明补充之后的函数$f(x)$是连续的。
+
+求导得到其导函数：
+
+\[f^{'}(x) = 2xsin(\frac{1}{x})-cos(\frac{1}{x})\]
+
+因为在$x=0$处是我们额外补充的点，故只能使用导数定义进行求导，求得$f^{'}(0)=0$，因此在$x=0$处的导数的存在的。
+
+但是我们可以证明，$\lim\limits_{x \to 0^+}f^{'}(x)$以及$\lim\limits_{x \to 0^-}f^{'}(x)$都是不存在的。
+
+也就是说，函数$f(x)$处处连续且处处可导，在$x=0$处，导数$f^{'}(0)$存在且等于0，但是在0的附近，导数$f^{'}(x)$振荡非常激烈，$\lim\limits_{x \to 0}f^{'}(x)$不存在。因此，可以说导函数$f^{'}(x)$存在但不是连续函数，即：存在本身可导但其导函数不连续的函数。
+
+% ----------------------------chapter 8----------------------------
+\chapter{Implicit Differentiation and Related Rates}
+
+目前没有值得记录的内容
+
+% ----------------------------chapter 9----------------------------
+\chapter{Exponentials and Logarithms}
+
+\section{基础知识}
+
+换底公式：
+\begin{equation}
+    log_b(x) = \frac{log_c(x)}{log_c(b)}
+\end{equation}
+
+自然指数e：
+\begin{equation}
+    \lim\limits_{n\to \infty}(1+\frac{1}{n})^n = e
+\end{equation}
+\begin{equation}
+    \lim\limits_{h\to 0}(1+h)^{\frac{1}{h}} = e
+\end{equation}
+\begin{equation}
+    \lim\limits_{n\to \infty}(1+\frac{x}{n})^n = e^x
+\end{equation}
+\begin{equation}
+    \lim\limits_{h\to 0}(1+xh)^{\frac{1}{h}} = e^x
+\end{equation}
+
+\section{对数/指数函数求导}
+
+\begin{equation}
+    \frac{d}{dx}ln(x) = \frac{1}{x}
+\end{equation}
+\begin{equation}
+    \frac{d}{dx}log_b(x) = \frac{1}{xln(b)}
+\end{equation}
+\begin{equation}
+    \frac{d}{dx}(b^x) = b^xln(b)
+\end{equation}
+\begin{equation}
+    \frac{d}{dx}(e^x) = e^x
+\end{equation}
+
+\section{指数/对数函数的极限}
+考虑极限：
+\[\lim\limits_{h\to 0}(1+3h^2)^{\frac{1}{3h^2}}\]
+
+看上去很像前面涉及到e的极限，故考虑向其变型求解：
+\[\lim\limits_{3h^2\to 0}(1+3h^2)^{\frac{1}{3h^2}} = e\]
+
+也就是说，如果用任意的当$h\to 0$时自身趋于$0$的量替换$h$, 就像$3h^2$ 或$sin(h)$, 则极限仍是e。
+
+\subsection{指数函数在0附近：}
+\begin{equation}
+    \lim\limits_{h\to 0}\frac{e^h-1}{h} = 1
+\end{equation}
+
+\subsection{对数函数在1附近：}
+\begin{equation}
+    \lim\limits_{h\to 0}\frac{ln(1+h)}{h} = 1
+\end{equation}
+
+\subsection{指数函数在$-\infty$或$\infty$附近：}
+
+\begin{equation}
+    \lim\limits_{x\to \infty}\frac{x^n}{e^x} = 0
+\end{equation}
+
+指数函数增长迅速。
+
+对于$x\to -\infty$的情况，可以令$t=-x$，转换为$\infty$。
+
+\subsection{对数函数在$\infty$附近：}
+
+\begin{equation}
+    \lim\limits_{x\to \infty}\frac{ln(x)}{x^a} = 0 (a>0)
+\end{equation}
+
+对数函数增长缓慢。
+
+\subsection{对数函数在0附近：}
+
+\begin{equation}
+    \lim\limits_{x\to 0^+}x^aln(x) = 0 (a>0)
+\end{equation}
+
+对数函数在0附近"增长"缓慢(把"增长"加上引号, 是因为当$x\to 0^+$时, $ln(x)$实际上是向下增长到$-\infty$)。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
